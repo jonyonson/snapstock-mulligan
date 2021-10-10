@@ -13,7 +13,6 @@ function fetchSuggestions(value) {
   return fetch(IEX_API.SEARCH + value + IEX_API.TOKEN)
     .then((res) => res.json())
     .then((result) => {
-      console.log(result);
       cache[value] = result;
       return result;
     });

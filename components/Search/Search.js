@@ -20,18 +20,26 @@ function Search() {
     setSearchTerm(event.target.value);
   };
 
+  const handleSelect = (item) => {
+    console.log(item);
+  };
+
   return (
-    <Combobox openOnFocus aria-label="Search" className={styles.search}>
+    <Combobox
+      openOnFocus
+      aria-label="Search"
+      className={styles.search}
+      onSelect={handleSelect}
+    >
       <ComboboxInput className="input" onChange={handleSearchTermChange} />
       {searchTerm.length > 0 && suggestions && (
         <ComboboxPopover className="shadow-popup">
           {suggestions.length > 0 ? (
             <ComboboxList>
-              {suggestions.map((quote) => {
+              {suggestions.map((quote, i) => {
                 const value = `${quote.symbol}, ${quote.name}`;
-                console.log(quote);
                 return (
-                  <ComboboxOption key={value} value={value}>
+                  <ComboboxOption key={`${i}-${value}`} value={value}>
                     <div className="flex justify-between">
                       <div>{quote.name}</div>
                       <div>{quote.symbol}</div>
@@ -41,11 +49,7 @@ function Search() {
                 );
               })}
             </ComboboxList>
-          ) : (
-            <span style={{ display: 'block', margin: 0 }}>
-              No results found
-            </span>
-          )}
+          ) : null}
         </ComboboxPopover>
       )}
     </Combobox>
