@@ -1,0 +1,16 @@
+.search {
+  [data-reach-combobox-input] {
+    width: 400px;
+  }
+
+  // input element in a specific state
+  // possible states: "idle" | "suggesting" | "navigating" | "interacting"
+  // [data-reach-combobox-input][data-state='idle'] {
+  // }
+  // [data-reach-combobox-input][data-state='suggesting'] {
+  // }
+  // [data-reach-combobox-input][data-state='navigating'] {
+  // }
+  // [data-reach-combobox-input][data-state='interacting'] {
+  // }
+}
