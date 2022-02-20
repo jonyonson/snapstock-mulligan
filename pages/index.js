@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
       <h1>Snapstock</h1>
       <div className="flex flex-col items-center justify-center min-h-screen py-2">
-        <Search />
+        <Search placeholder="Search" />
       </div>
     </div>
   );

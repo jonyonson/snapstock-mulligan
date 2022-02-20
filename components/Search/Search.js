@@ -14,7 +14,7 @@ import useSearch from '../../hooks/use-search';
 import styles from './Search.module.scss';
 import '@reach/combobox/styles.css';
 
-function Search() {
+function Search({ placeholder }) {
   const [searchTerm, setSearchTerm] = useState('');
   const suggestions = useSearch(searchTerm);
 
@@ -36,6 +36,7 @@ function Search() {
       <ComboboxInput
         className={styles.input}
         onChange={handleSearchTermChange}
+        placeholder={placeholder}
       />
       {searchTerm.length > 0 && suggestions && (
         <ComboboxPopover className={styles.popover}>
@@ -44,8 +45,11 @@ function Search() {
               {suggestions.map((quote) => {
                 const value = `${quote.symbol}, ${quote.name}`;
                 return (
-                  // <ComboboxOption key={`${i}-${value}`} value={value}>
-                  <ComboboxOption key={value} value={value}>
+                  <ComboboxOption
+                    key={value}
+                    value={value}
+                    data-testid="combobox-option"
+                  >
                     <div className="flex justify-between">
                       <div>{quote.name}</div>
                       <div>{quote.symbol}</div>
