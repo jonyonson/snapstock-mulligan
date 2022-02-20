@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import {
   Combobox,
   ComboboxInput,
@@ -17,13 +18,15 @@ import '@reach/combobox/styles.css';
 function Search({ placeholder, className }) {
   const [searchTerm, setSearchTerm] = useState('');
   const suggestions = useSearch(searchTerm);
+  const router = useRouter();
 
   const handleSearchTermChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
   const handleSelect = (item) => {
-    console.log(item);
+    const symbol = item.split(',')[0];
+    router.push(`/stocks/${symbol.toLowerCase()}`);
   };
 
   return (
