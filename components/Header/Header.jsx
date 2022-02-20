@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Search from '../Search/Search';
 
 // Styles
 import styles from './Header.module.scss';
@@ -19,6 +20,7 @@ function Header({ className }) {
           </h1>
         </a>
       </Link>
+      <Search placeholder="🔍  Search Quotes" className="py-4" />
     </header>
   );
 }

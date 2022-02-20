@@ -11,8 +11,7 @@ export default function Home() {
         <title>Snapstock Mulligan</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
-      <Search placeholder="🔍  Search Quotes" className="py-4" />
+      <h1>Hello World</h1>
     </div>
   );
 }
