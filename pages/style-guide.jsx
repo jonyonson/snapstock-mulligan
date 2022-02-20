@@ -1,6 +1,9 @@
+import Header from '../components/Header/Header';
+
 export default function StyleGuide() {
   return (
     <div>
+      <Header className="pb-4" />
       <h1>Heading 1: Hello World</h1>
       <h2>Heading 2: Hello World</h2>
       <h3>Heading 3: Hello World</h3>
