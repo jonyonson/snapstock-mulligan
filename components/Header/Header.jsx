@@ -12,8 +12,8 @@ function Header() {
           <Image
             src="/images/logo.svg"
             alt="Snapstock"
-            height="44px"
-            width="202px"
+            height="40px"
+            width="184px"
           />
         </>
       </Link>
