@@ -14,7 +14,7 @@ import useSearch from '../../hooks/use-search';
 import styles from './Search.module.scss';
 import '@reach/combobox/styles.css';
 
-function Search({ placeholder }) {
+function Search({ placeholder, className }) {
   const [searchTerm, setSearchTerm] = useState('');
   const suggestions = useSearch(searchTerm);
 
@@ -30,7 +30,7 @@ function Search({ placeholder }) {
     <Combobox
       openOnFocus
       aria-label="Search"
-      className={styles.search}
+      className={`${styles.search} ${className}`}
       onSelect={handleSelect}
     >
       <ComboboxInput

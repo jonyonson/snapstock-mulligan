@@ -12,9 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="flex flex-col items-center justify-center min-h-screen py-2">
-        <Search placeholder="Search" />
-      </div>
+      <Search placeholder="🔍  Search Quotes" className="py-4" />
     </div>
   );
 }
