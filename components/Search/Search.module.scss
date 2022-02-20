@@ -1,16 +1,31 @@
 .search {
-  [data-reach-combobox-input] {
-    width: 400px;
-  }
+  width: 100%;
+
+  // [data-reach-combobox-input] {}
 
   // input element in a specific state
   // possible states: "idle" | "suggesting" | "navigating" | "interacting"
-  // [data-reach-combobox-input][data-state='idle'] {
-  // }
-  // [data-reach-combobox-input][data-state='suggesting'] {
-  // }
-  // [data-reach-combobox-input][data-state='navigating'] {
-  // }
-  // [data-reach-combobox-input][data-state='interacting'] {
-  // }
+  // [data-reach-combobox-input][data-state='idle'] {}
+  // [data-reach-combobox-input][data-state='suggesting'] {}
+  // [data-reach-combobox-input][data-state='navigating'] {}
+  // [data-reach-combobox-input][data-state='interacting'] {}
+}
+
+.input {
+  @apply shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none text-xl;
+}
+
+.popover {
+  // [data-reach-combobox-list] {}
+
+  [data-reach-combobox-option] {
+    @apply bg-white;
+    @apply text-black;
+    @apply p-2;
+    @apply border-b-2;
+    @apply border-gray-200;
+    @apply hover:bg-gray-200;
+    @apply hover:text-black;
+    @apply hover:border-gray-200;
+  }
 }

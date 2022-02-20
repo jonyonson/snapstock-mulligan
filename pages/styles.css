@@ -21,8 +21,8 @@
   }
 }
 
-@layer components {
+/* @layer components {
   .input {
-    @apply shadow appearance-none border border-blue-500 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none;
+    @apply shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none text-xl;
   }
-}
+} */

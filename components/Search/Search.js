@@ -1,16 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   Combobox,
   ComboboxInput,
   ComboboxPopover,
   ComboboxList,
   ComboboxOption,
-  ComboboxOptionText,
 } from '@reach/combobox';
-import '@reach/combobox/styles.css';
+
+// Hooks
 import useSearch from '../../hooks/use-search';
 
+// Styles
 import styles from './Search.module.scss';
+import '@reach/combobox/styles.css';
 
 function Search() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -31,20 +33,23 @@ function Search() {
       className={styles.search}
       onSelect={handleSelect}
     >
-      <ComboboxInput className="input" onChange={handleSearchTermChange} />
+      <ComboboxInput
+        className={styles.input}
+        onChange={handleSearchTermChange}
+      />
       {searchTerm.length > 0 && suggestions && (
-        <ComboboxPopover className="shadow-popup">
-          {suggestions.length > 0 ? (
+        <ComboboxPopover className={styles.popover}>
+          {suggestions.length ? (
             <ComboboxList>
-              {suggestions.map((quote, i) => {
+              {suggestions.map((quote) => {
                 const value = `${quote.symbol}, ${quote.name}`;
                 return (
-                  <ComboboxOption key={`${i}-${value}`} value={value}>
+                  // <ComboboxOption key={`${i}-${value}`} value={value}>
+                  <ComboboxOption key={value} value={value}>
                     <div className="flex justify-between">
                       <div>{quote.name}</div>
                       <div>{quote.symbol}</div>
                     </div>
-                    {/* <ComboboxOptionText /> */}
                   </ComboboxOption>
                 );
               })}

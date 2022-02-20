@@ -33,6 +33,8 @@ export default function useSearch(searchTerm) {
       return () => {
         return (isFresh = false);
       };
+    } else {
+      setSuggestions([]);
     }
   }, [searchTerm]);
 
