@@ -12,7 +12,7 @@
 }
 
 .input {
-  @apply shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight text-xl;
+  @apply outline-sky-900 shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight text-xl;
 
   &::placeholder {
     text-transform: uppercase;
